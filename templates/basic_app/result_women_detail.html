@@ -1,0 +1,17 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+
+      <ol>
+        <h2><li>Gold :- {{result_women_detail.gold_medal}}</li></h2>
+        <h2><li>Silver :- {{result_women_detail.silver_medal}}</li></h2>
+        <h2><li>Bronze :- {{result_women_detail.bronze_medal}}</li></h2>
+      </ol>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -22,9 +22,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name = 'index'),
-    path('basic_app/',include('basic_app.urls')),
+    path('sangarsh/',include('basic_app.urls')),
     path('logout/',views.user_logout,name = 'logout'),
-    path('special/',views.special,name = 'special')
+    path('special/',views.special,name = 'special'),
+    # path('accounts/', include('allauth.urls')),
 ]
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,
