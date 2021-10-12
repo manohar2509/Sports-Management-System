@@ -5,10 +5,10 @@
   <div class="container">
     <div class="jumbotron">
 
-      <p class="heading"> Here are the list of Athelete<p>
+      <p class="heading">Results - Men<p>
 
         {% for s in result_men %}
-          <h2><li class="heading"><a href="{{ s.id }}">{{s.sport}}</a></li></h2>
+          <h2><li class="list-element"><a href="{{ s.id }}">{{s.sport}}</a></li></h2>
         {% endfor %}
         {% if is_paginated %}
           <div class="pagination">

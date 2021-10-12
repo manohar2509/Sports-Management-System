@@ -1,9 +1,55 @@
 {% extends "basic_app/base.html" %}
 {% block body_block %}
+{% load static %}
 
 <div class="container">
   <div class="jumbotron">
-    <h1>Welcome to Sport's Event</h1>
+    <h1 class="heading">Welcome to Sport's Event</h1>
+    <h2 class="subheading">We welcome you to the first edition of Sangarsh.</h2>
+    <h2 class="subheading">Sangarsh is an annual sports event conducted across various cities in India, The best talent of India come here to grab their dream</h2>
+  </div>
+</div>
+<div class="photos">
+  <h1 class="photos-heading">Photos from the Event</h1>
+  <div class="photos-list">
+    <div class="photo-container"><img src="{% static "event-photos/photos2.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos3.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos4.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+  </div>
+  <div class="photos-list">
+    <div class="photo-container"><img src="{% static "event-photos/photos2.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos3.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos4.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
   </div>
 </div>
 
