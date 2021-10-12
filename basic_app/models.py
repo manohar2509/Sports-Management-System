@@ -5,11 +5,11 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import RegexValidator
 class UserProfileInfo(models.Model):
-    CRICKET = 'Cr'
-    FOOTBALL = 'Fb'
-    HOCKEY = 'Ho'
-    BADMINTON = 'Bm'
-    VOLLEYBALL = 'Vb'
+    CRICKET = 'Cricket'
+    FOOTBALL = 'Football'
+    HOCKEY = 'Hockey'
+    BADMINTON = 'Badminton'
+    VOLLEYBALL = 'Volleyball'
     SPORT_CHOICES = [
         (CRICKET, 'Cricket'),
         (FOOTBALL, 'Football'),
@@ -17,11 +17,11 @@ class UserProfileInfo(models.Model):
         (BADMINTON, 'Badminton'),
         (VOLLEYBALL, 'Volleyball'),
     ]
-    INDIA = 'Ind'
-    JAPAN = 'Jpn'
-    CHINA = 'Chn'
+    INDIA = 'India'
+    JAPAN = 'Japan'
+    CHINA = 'China'
     USA = 'Usa'
-    RUSSIA = 'Rs'
+    RUSSIA = 'Russia'
     COUNTRY_CHOICES = [
         (INDIA,"India"),
         (JAPAN,"Japan"),
@@ -37,11 +37,11 @@ class UserProfileInfo(models.Model):
     def __str__(self):
         return self.user.username
 class Result_Men(models.Model):
-    CRICKET = 'Cr'
-    FOOTBALL = 'Fb'
-    HOCKEY = 'Ho'
-    BADMINTON = 'Bm'
-    VOLLEYBALL = 'Vb'
+    CRICKET = 'Cricket'
+    FOOTBALL = 'Football'
+    HOCKEY = 'Hockey'
+    BADMINTON = 'Badminton'
+    VOLLEYBALL = 'Volleyball'
     SPORT_CHOICES = [
         (CRICKET, 'Cricket'),
         (FOOTBALL, 'Football'),
@@ -58,11 +58,11 @@ class Result_Men(models.Model):
     class Meta:
         unique_together = ('gold_medal','silver_medal','bronze_medal',)
 class Result_Women(models.Model):
-    CRICKET = 'Cr'
-    FOOTBALL = 'Fb'
-    HOCKEY = 'Ho'
-    BADMINTON = 'Bm'
-    VOLLEYBALL = 'Vb'
+    CRICKET = 'Cricket'
+    FOOTBALL = 'Football'
+    HOCKEY = 'Hockey'
+    BADMINTON = 'Badminton'
+    VOLLEYBALL = 'Volleyball'
     SPORT_CHOICES = [
         (CRICKET, 'Cricket'),
         (FOOTBALL, 'Football'),
@@ -79,11 +79,11 @@ class Result_Women(models.Model):
     class Meta:
         unique_together = ('gold_medal','silver_medal','bronze_medal',)
 class Medals(models.Model):
-    INDIA = 'Ind'
-    JAPAN = 'Jpn'
-    CHINA = 'Chn'
+    INDIA = 'India'
+    JAPAN = 'Japan'
+    CHINA = 'China'
     USA = 'Usa'
-    RUSSIA = 'Rs'
+    RUSSIA = 'Russia'
     COUNTRY_CHOICES = [
         (INDIA,"India"),
         (JAPAN,"Japan"),
@@ -100,3 +100,21 @@ class Medals(models.Model):
         ordering = ['gold_medal','silver_medal','bronze_medal','total_medals']
     def __str__(self):
         return self.country
+class Room(models.Model):
+    Categories = [
+                ('Ac','Ac'),
+                ('Non_Ac','Non-Ac')
+        ]
+    Room_number = models.IntegerField()
+    Category = models.CharField(max_length = 10,choices = Categories,null=False, blank=False)
+    Capacity = models.IntegerField()
+    Beds = models.IntegerField()
+    def __str__(self):
+        return f'{self.Room_number} with {self.Capacity} have {self.Beds}'
+class Booking(models.Model):
+    Athlete = models.ForeignKey(User,on_delete = models.CASCADE)
+    Room = models.ForeignKey(Room,on_delete = models.CASCADE)
+    check_in = models.DateTimeField()
+    check_out = models.DateTimeField()
+    def __str__(self):
+        return f'{self.Athlete} has booked {self.Room} from {self.check_in} to {self.check_out}'

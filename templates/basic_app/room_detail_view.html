@@ -1,0 +1,29 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+        <h1 class="heading">Register Here</h1>
+        <h3 class="subheading">{{category}}</h3>
+        <div class="form-container">
+          <form class="form-form" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <div class="input-div">
+              <label for = "id_check_in"> Check_in:</label>
+              <input type = "datetime-local" id = "id_check_in" name="check_in">
+            </div>
+            <div class="input-div">
+              <label for = "id_check_out"> Check_out:</label>
+              <input type = "datetime-local" id = "id_check_out" name="check_out">
+            </div>
+            <input type="submit" name="" value="Register">
+          </form>
+        </div>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

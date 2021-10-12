@@ -1,5 +1,5 @@
 from django.contrib import admin
-from basic_app.models import UserProfileInfo,Result_Men,Result_Women,Medals
+from basic_app.models import UserProfileInfo,Result_Men,Result_Women,Medals,Room,Booking
 from django.contrib.auth.models import User
 # Register your models here.
 
@@ -20,3 +20,5 @@ admin.site.register(UserProfileInfo,mymodel)
 admin.site.register(Result_Men,mymodel1)
 admin.site.register(Result_Women,mymodel1)
 admin.site.register(Medals,mymodel2)
+admin.site.register(Room)
+admin.site.register(Booking)

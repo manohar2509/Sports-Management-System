@@ -5,12 +5,12 @@
   <div class="container">
     <div class="jumbotron">
 
-      <h1>Athelte Details</h1>
-      <p>Name : {{ athlete_detail.user.username}}</p>
-      <p>Country : {{ athlete_detail.country}}</p>
-      <p>sport : {{ athlete_detail.sport}}</p>
+      <h1 class="heading">Athlete Details</h1>
+      <p><b>Name : </b>{{ athlete_detail.user.username}}</p>
+      <p><b>Country : </b>{{ athlete_detail.country}}</p>
+      <p><b>Sport : </b>{{ athlete_detail.sport}}</p>
       {% if athlete_detail.profile_pic %}
-        <p>Profile_pic:<img src="{{ athlete_detail.profile_pic.url}}"  alt="No profile_pic"> </p>
+        <p><b>Profile_pic : </b><img src="{{ athlete_detail.profile_pic.url}}"  alt="No profile_pic"> </p>
       {% endif %}
       <div>
         <br>
@@ -19,5 +19,6 @@
     </div>
 
   </div>
+</div>
 
 {% endblock %}
