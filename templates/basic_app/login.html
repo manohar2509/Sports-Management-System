@@ -1,5 +1,7 @@
 {% extends 'basic_app/base.html' %}
 {% block body_block %}
+{% load socialaccount %}
+{% providers_media_js %}
   <div class="jumbotron">
     <form class="" action="{% url 'basic_app:user_login' %}" method="post">
         {% csrf_token %}
@@ -9,5 +11,6 @@
         <input type="password" name="password" >
         <input type="submit" name="" value="Login">
     </form>
+    <a href="{% provider_login_url "google" %}"> Google connect</a>
   </div>
 {% endblock %}
