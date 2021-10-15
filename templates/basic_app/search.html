@@ -1,0 +1,12 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+{% if searched %}
+<p> You searched For {{searched}}<p>
+{% for i  in athlete %}
+  <p>{{i}} {{i.id}}</p>
+  <a href="{% url 'basic_app:detail' i.id %}">{{i}}</a>
+{% endfor %}
+{% else %}
+<p>please enter something valid to search</p>
+{% endif %}
+{% endblock %}

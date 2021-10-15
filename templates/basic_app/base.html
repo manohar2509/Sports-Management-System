@@ -32,6 +32,11 @@
         {% else %}
         <a class="navbar-brand" href="{% url 'basic_app:user_login' %}">Login</a>
         {% endif %}
+        <form class="d-flex" method="POST"action="{% url 'basic_app:search' %}">
+          {% csrf_token %}
+          <input class="form-control me-2" type = "search" palceholder = "search"arial-label="search" name="search">
+          <button class="btn btn-outline-success"type="submit">Search</button>
+        </form>
     </nav>
 
     <div class="container">

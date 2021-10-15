@@ -153,7 +153,13 @@ def BookingView(request):
             book_form = availform()
       return render(request,"basic_app/avail_form.html",{"book_form":book_form,"booked":booked})
 
-
+def search(request):
+    if request.method == 'POST':
+        searched = request.POST['search']
+        athlete = models.UserProfileInfo.objects.filter(user__username__icontains = searched)
+        return render(request,"basic_app/search.html",{'searched':searched,'athlete':athlete})
+    else:
+        return render(request,"basic_app/search.html",{})
 def register(request):
 
     registered = False
