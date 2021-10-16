@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block body_block %}
-  <div class="container">
+  <div id="section" class="container">
     <div class="jumbotron">
 
-      <p class="heading"> Here are the list of Atheletes<p>
+      <p class="main-heading">Athletes<p>
       <ol class="list-or">
         {% for s in athletes %}
           <h2><li class="list-element"><span class="athlete-image"><img src="{% static "icons/sportsman.png" %}"></span><a href="{{ s.id }}">{{s.user.username}}</a></li></h2>

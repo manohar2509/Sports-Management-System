@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block body_block %}
-  <div class="container">
+  <div id="section" class="container">
     <div class="jumbotron">
 
-      <p class="heading">Results - Men<p>
+      <p class="main-heading">Results - Men<p>
 
         {% for s in result_men %}
           <h2><li class="list-element"><a href="{{ s.id }}">{{s.sport}}</a></li></h2>

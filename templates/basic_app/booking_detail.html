@@ -1,6 +1,7 @@
 {% extends "basic_app/base.html" %}
 {% load static %}
 {% block body_block %}
+<div class="container" id="section">
 <div class = "jumbotron">
 <h1>booking Details</h1>
 <p>user : {{ booking_detail.Athlete}}</p>
@@ -8,5 +9,6 @@
 <p>check_in : {{ booking_detail.check_in}}</p>
 <p>check_out : {{ booking_detail.check_out}}</p>
   <a href="{% url 'basic_app:book_delete' pk=booking_detail.pk %}"> delete </a>
+</div>
 </div>
 {% endblock %}

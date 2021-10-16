@@ -102,13 +102,60 @@ body {
 }
 
 /*CONTAINER*/
-.container {
+#section {
+  margin: 0rem 2rem;
+  padding: 2rem 2rem;
+  border-bottom: 2px solid gray;
+}
+.jumbotron-main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.jumbotron {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   height: 100vh;
   padding: 0 2rem;
+  border-bottom: 1px solid gray; */
 }
 
+.intro-main-heading {
+  text-align: center;
+  color: orange;
+  font-family: "Raleway", sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.intro-main-subheading {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.main-heading {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.main-subheading {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
 .heading {
   font-family: "Raleway", sans-serif;
   font-size: 2.5rem;
@@ -202,6 +249,11 @@ body {
   padding-right: 0.6rem;
 }
 
+.photos {
+  border-bottom: 1px solid gray;
+  padding: 1rem 0;
+}
+
 /*Photos*/
 .photos-heading {
   text-align: center;
@@ -210,7 +262,8 @@ body {
 .photos-list {
   margin-bottom: 1rem;
   display: flex;
-  justify-content: space-around;
+
+  justify-content: center;
   align-items: center;
 }
 
@@ -218,6 +271,7 @@ body {
   width: 25%;
   padding: 0.5rem;
   border-radius: 5px;
+  margin: 1rem;
   background: rgba(255, 255, 255, 0.313);
   backdrop-filter: blur(10px);
 }
@@ -237,4 +291,50 @@ body {
   /* width: 100%; */
   display: inline-block;
   font-size: 0.6rem;
+}
+
+/* Top Performers */
+
+.top-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.top-list {
+  margin-bottom: 1rem;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.top-container {
+  width: 25%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 1rem;
+  background: rgba(255, 255, 255, 0.313);
+  backdrop-filter: blur(10px);
+}
+
+.top-container img {
+  border-radius: 8px;
+}
+
+.top-list img {
+  height: 220px;
+  width: 100%;
+}
+.top-description-heading {
+  font-size: 0.9rem;
+}
+.top-description-subheading {
+  /* width: 100%; */
+  display: inline-block;
+  font-size: 0.6rem;
+}
+
+.top-video {
+  width: 100%;
+  outline: none;
+  border: none;
 }

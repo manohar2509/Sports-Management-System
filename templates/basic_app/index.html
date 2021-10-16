@@ -2,14 +2,14 @@
 {% block body_block %}
 {% load static %}
 
-<div class="container">
-  <div class="jumbotron">
-    <h1 class="heading">Welcome to Sport's Event</h1>
-    <h2 class="subheading">We welcome you to the first edition of Sangarsh.</h2>
-    <h2 class="subheading">Sangarsh is an annual sports event conducted across various cities in India, The best talent of India come here to grab their dream</h2>
+<div id="section" class="containerval">
+  <div class="jumbotron-main">
+    <h1 class="intro-main-heading">Sangarsh 2021</h1>
+    <h2 class="intro-main-subheading">We welcome you to the first edition of Sangarsh.</h2>
+    <h2 class="intro-main-subheading">Sangarsh is an annual sports event conducted across various cities in India, The best talent of India come here to grab their dream</h2>
   </div>
 </div>
-<div class="photos">
+<div id="section" class="photos">
   <h1 class="photos-heading">Photos from the Event</h1>
   <div class="photos-list">
     <div class="photo-container"><img src="{% static "event-photos/photos2.jpg" %}" alt="">
@@ -53,4 +53,83 @@
   </div>
 </div>
 
+<!-- Top Performer -->
+
+
+  <!-- <div class="photos-list">
+    <div class="photo-container"><img src="{% static "event-photos/photos2.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos3.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos4.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+  </div> -->
+<!-- </div> -->
+<div id="section" class="top-performers">
+  <h1 class="top-heading">Top Performers</h1>
+  <div class="top-list">
+    <div class="top-container"><img src="{% static "top-performerss/top-performer1.jpg" %}" alt="">
+      <div class="top-description">
+        <div class="top-description-heading">Michael Phelps</div>
+        <p class="top-description-subheading">Gold medalist in Butterfly, Free dive, seal dive (Swimming)</p>
+      </div>
+    </div>
+    <div class="top-container"><img src="{% static "top-performerss/top-performer2.jpg" %}" alt="">
+      <div class="top-description">
+        <div class="top-description-heading">Gymnastics Women Final</div>
+        <p class="top-description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="top-container"><img src="{% static "top-performerss/top-performer3.jpg" %}" alt="">
+      <div class="top-description">
+        <div class="top-description-heading">Gymnastics Women Final</div>
+        <p class="top-description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="section" class="top-performers">
+    <h1 class="top-heading">Videos</h1>
+    <div class="top-list">
+      <div class="top-container">
+        <iframe class="top-video" width="420" height="315"
+src="https://www.youtube.com/embed/GYnZkFVXvts">
+</iframe>
+        <div class="top-description">
+          <div class="top-description-heading">Michael Phelps</div>
+          <p class="top-description-subheading">Gold medalist in Butterfly, Free dive, seal dive (Swimming)</p>
+        </div>
+      </div>
+      <div class="top-container">
+        <iframe class="top-video" width="420" height="315"
+src="https://www.youtube.com/embed/T1T0CEMK_fQ">
+</iframe>
+        <div class="top-description">
+          <div class="top-description-heading">Gymnastics Women Final</div>
+          <p class="top-description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+        </div>
+      </div>
+      <div class="top-container">
+        <iframe class="top-video" width="420" height="315"
+src="https://www.youtube.com/embed/pBsjtSjQEjM">
+</iframe>
+        <div class="top-description">
+          <div class="top-description-heading">Gymnastics Women Final</div>
+          <p class="top-description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+        </div>
+      </div>
+    </div>
+    </div>
 {% endblock %}

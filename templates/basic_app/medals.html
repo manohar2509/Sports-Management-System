@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block body_block %}
-  <div class="container">
+  <div id="section" class="container">
     <div class="jumbotron">
 
-      <h1 class="heading">Medals<h1>
+      <h1 class="main-heading">Medals<h1>
         {% for s in medals %}
           <h2><li class="list-element"><a href="{{ s.id }}">{{s.country}}</a></li></h2>
         {% endfor %}
