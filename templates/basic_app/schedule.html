@@ -1,8 +1,11 @@
 {% extends "basic_app/base.html" %}
 {% load static %}
 {% block body_block %}
+<video autoplay muted loop id="myVideo">
+    <source src="{% static "videos/schedule.mp4" %}" type="video/mp4">
+  </video>
 <div id="section" class="container">
-<h3 class="main-heading">This is schedule page</h3>
+<h3 class="main-heading">Schedule</h3>
 </div>
 
 {% endblock %}
