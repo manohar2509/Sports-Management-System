@@ -211,6 +211,19 @@ body {
   backdrop-filter: blur(2px);
   border-radius: 12px;
 }
+
+.form-container2 {
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(49, 49, 49, 0.707);
+  width: 600px;
+  margin: auto;
+  margin-top: 2rem;
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+}
+
 .form-form {
   display: flex;
   flex-direction: column;
@@ -219,6 +232,14 @@ body {
 
 .form-form > * {
   margin-bottom: 0.6rem;
+}
+
+.register-form > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .username-container {
