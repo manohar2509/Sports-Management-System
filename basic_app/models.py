@@ -96,6 +96,14 @@ class Medals(models.Model):
     silver_medal = models.PositiveIntegerField(default=0)
     bronze_medal = models.PositiveIntegerField(default=0)
     total_medals = models.PositiveIntegerField(default=0)
+    # @property
+    # def total_medals(self):
+    #     total_medals = self.gold_medal + self.silver_medal + self.silver_medal
+    #     return total_medals
+    def save(self):
+        self.total_medals=0
+        self.total_medals = self.gold_medal + self.silver_medal + self.silver_medal
+        return super(Medals, self).save()
     class Meta:
         ordering = ['gold_medal','silver_medal','bronze_medal','total_medals']
     def __str__(self):

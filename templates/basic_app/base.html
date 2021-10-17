@@ -20,9 +20,9 @@
     <nav class="navbar">
       <div class="navbar-nav">
 
-        <!-- <div class="navbar-logo-image"> -->
+        <div class="navbar-logo-image">
           <img class="navbar-logo-image" src="{% static "sangarsh_logo_v1.png" %}" alt="Logo">
-        <!-- </div> -->
+        </div>
 
         <div class="navbar-routes">
           <a class="navbar-brand" href="{% url 'index' %}"><img class="navbar-icon" src="{% static "icons/home.png" %}">HOME</a>
@@ -36,13 +36,11 @@
           <a class="navbar-brand" href="{% url 'basic_app:result_men' %}"><img class="navbar-icon" src="{% static "icons/user.png" %}">Result_Men</a>
           <a class="navbar-brand" href="{% url 'basic_app:result_women' %}"><img class="navbar-icon" src="{% static "icons/woman.png" %}">Result_Women</a>
           <a class="navbar-brand" href="{% url 'basic_app:medals' %}"><img class="navbar-icon" src="{% static "icons/medal.png" %}">Medals</a>
-          <form class="d-flex" method="POST"action="{% url 'basic_app:search' %}">
+          <form style="margin-left: .5rem" class="search-form" method="POST"action="{% url 'basic_app:search' %}">
             {% csrf_token %}
-            <input class="form-control me-2" type = "search" palceholder = "search"arial-label="search" name="search">
-            <button class="btn btn-outline-success"type="submit">Search</button>
+            <input style="outline: none; border: none; border-radius: 3px" class="search-input" type = "search" palceholder = "search"arial-label="search" name="search">
+            <button style="font-size: 0.6rem" class="navbar-link" type="submit">Search</button>
           </form>
-          
-          
         </div>
 
         <div class="navbar-links">
@@ -58,6 +56,8 @@
           <a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a>
           {% endif %}
         </div>
+        </div>
+
     </nav>
 
     <div class="container">

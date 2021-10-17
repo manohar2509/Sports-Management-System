@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block body_block %}
-  <div class="container">
+  <div id="section" class="container">
     <div class="jumbotron">
 {% for i in booking_list %}
-  <h2><li><a href = "{% url 'basic_app:book_detail' pk=i.pk %}">{{i.Athlete}}</a></li></h2>
+  <h2><li class="list-element"><a href = "{% url 'basic_app:book_detail' pk=i.pk %}">{{i.Athlete}}</a></li></h2>
 {% endfor %}
 
     </div>

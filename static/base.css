@@ -74,6 +74,17 @@ body {
   justify-content: space-between;
 }
 
+.search-input {
+  outline: none;
+  border: none;
+}
+
+.search-btn {
+  border-radius: 6px;
+  background: orange;
+  padding: 0.5rem 0.2rem;
+}
+
 .navbar-nav {
   padding: 0 2rem;
   /* width: 100%; */
@@ -97,6 +108,19 @@ body {
 
 .navbar-link,
 .button {
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background: rgb(74, 0, 108);
+  padding: 0.4rem 0.8rem;
+  margin: 0 0.4rem;
+  /* border: 1px solid black; */
+  border-radius: 15px;
+  transition: 0.4s all;
+}
+
+.search-link {
   cursor: pointer;
   border: none;
   text-decoration: none;
