@@ -36,6 +36,11 @@
           <a class="navbar-brand" href="{% url 'basic_app:result_men' %}"><img class="navbar-icon" src="{% static "icons/user.png" %}">Result_Men</a>
           <a class="navbar-brand" href="{% url 'basic_app:result_women' %}"><img class="navbar-icon" src="{% static "icons/woman.png" %}">Result_Women</a>
           <a class="navbar-brand" href="{% url 'basic_app:medals' %}"><img class="navbar-icon" src="{% static "icons/medal.png" %}">Medals</a>
+          <form class="d-flex" method="POST"action="{% url 'basic_app:search' %}">
+            {% csrf_token %}
+            <input class="form-control me-2" type = "search" palceholder = "search"arial-label="search" name="search">
+            <button class="btn btn-outline-success"type="submit">Search</button>
+          </form>
           
           
         </div>
