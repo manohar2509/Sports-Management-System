@@ -173,7 +173,7 @@ def register(request):
 
         # Check to see both forms are valid
         if user_form.is_valid() and profile_form.is_valid():
-            send_mail('Registered','Successfully signed-up. Have a great tournament','chundurimanohar2509@gmail.com',[request.POST['email']])
+            # send_mail('Registered','Successfully signed-up. Have a great tournament','chundurimanohar2509@gmail.com',[request.POST['email']])
 
             # Save User Form to Database
             user = user_form.save()

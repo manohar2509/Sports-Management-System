@@ -1,4 +1,5 @@
 {% extends 'basic_app/base.html' %}
+{% load static %}
 {% block body_block %}
 {% load socialaccount %}
 {% providers_media_js %}
@@ -16,8 +17,9 @@
           </div>
           <div class="submit-container">
             <input type="submit" name="" value="Login">
+            <a class="google-button" href="{% provider_login_url "google" %}"><img class="google-icon" src="{% static "icons/google.png" %}"><span class="google-text">Sign in with Google</span></a>
           </div>
-          <a href="{% provider_login_url "google" %}"> Google connect</a>
+          
       </form>
     </div>
   </div>

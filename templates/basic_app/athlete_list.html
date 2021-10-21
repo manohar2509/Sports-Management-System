@@ -9,22 +9,22 @@
     <div class="jumbotron">
 
       <p class="main-heading">Athletes<p>
-      <ol class="list-or">
+      <ul class="list-or">
         {% for s in athletes %}
           <h2><li class="list-element"><span class="athlete-image"><img src="{% static "icons/sportsman.png" %}"></span><a href="{{ s.id }}">{{s.user.username}}</a></li></h2>
         {% endfor %}
-      </ol>
+      </ul>
       {% if is_paginated %}
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                    <a class="btn-prev" href="{{ request.path }}?page={{ page_obj.previous_page_number }}"> <i class="arrow left"></i></a>
                 {% endif %}
                 <span class="page-current">
                     Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
                 </span>
                 {% if page_obj.has_next %}
-                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                    <a class="btn-next" href="{{ request.path }}?page={{ page_obj.next_page_number }}"> <i class="arrow right"></i> </a>
                 {% endif %}
             </span>
         </div>

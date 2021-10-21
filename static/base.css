@@ -47,7 +47,7 @@ body {
 .navbar-logo-image {
   height: 60px;
   /* width: auto; */
-  padding: 1rem 0rem;
+  padding: 1rem;
 }
 
 .navbar-brand {
@@ -149,9 +149,77 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
-.jumbotron {
+
+.intro-left {
+  width: 50%;
+}
+.intro-right {
+  /* width: 50%; */
+  color: black;
+  background: white;
+  padding: 3rem 2rem;
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+  /* offset-filter: blur(8px); */
+  /* -webkit-filter: blur(8px); */
+}
+
+.intro-heading {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.intro-section {
+  margin: 1rem 0;
+}
+
+.intro-sections {
+  font-size: 0.8rem;
+}
+
+.intro-sections {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid gray;
+}
+
+.intro-sections-left {
+  font-weight: 600;
+  color: gray;
+}
+
+.intro-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.intro-btn {
+  margin-top: 0.8rem;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  background: rgb(224, 109, 2);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.intro-btn-left {
+  background: red;
+}
+
+.intro-btn-right {
+  background: rgb(105, 5, 255);
+}
+
+. .jumbotron {
   /* display: flex;
   justify-content: center;
   align-items: center;
@@ -283,6 +351,7 @@ body {
 .submit-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -395,4 +464,70 @@ body {
   width: 100%;
   outline: none;
   border: none;
+}
+
+/* Footer  */
+
+.footer {
+  width: 100vw;
+  padding: 1rem 0;
+  /* position: fixed; */
+  bottom: 0px;
+  text-align: center;
+  background: rgb(0, 0, 0);
+  clear: both;
+  position: relative;
+  /* height: 200px; */
+  margin-top: -10px;
+}
+
+.footer-text {
+  font-size: 1rem;
+}
+
+/* google connect btn  */
+.google-button {
+  margin-top: 0.8rem;
+  font-size: 0.7rem;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  padding: 0.25rem 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.google-icon {
+  height: 30px;
+}
+
+.google-text {
+  margin-left: 0.5rem;
+}
+
+.arrow {
+  color: #fff;
+  border: solid rgb(240, 240, 240);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 0.5rem;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 0.5rem;
+}
+
+.pagination {
+  text-align: center;
 }

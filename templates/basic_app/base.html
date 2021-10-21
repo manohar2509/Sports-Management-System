@@ -20,7 +20,7 @@
     <nav class="navbar">
       <div class="navbar-nav">
 
-        <div class="navbar-logo-image">
+        <div class="navbar-logo-image-container">
           <img class="navbar-logo-image" src="{% static "sangarsh_logo_v1.png" %}" alt="Logo">
         </div>
 
@@ -63,6 +63,9 @@
     <div class="container">
     {% block body_block %}
     {% endblock %}
+    </div>
+    <div class="footer">
+      <h1 class="footer-text">&copy Copyright Group 6 2021</h1>
     </div>
   </body>
 </html>
