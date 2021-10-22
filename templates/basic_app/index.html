@@ -38,8 +38,8 @@
         </div>
       </div>
       <div class="intro-buttons">
-        <div class="intro-btn intro-btn-left">Home <i class="arrow right"></i></div>
-        <div class="intro-btn intro-btn-right">Results <i class="arrow right"></i></div>
+        <a href="{% url 'index' %}" class="intro-btn intro-btn-left">Home<i class="arrow right"></i></a>
+        <a href="{% url 'basic_app:result_men' %}" class="intro-btn intro-btn-right">Results <i class="arrow right"></i></a>
       </div>
     </div>
     

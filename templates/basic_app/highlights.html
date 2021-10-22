@@ -1,0 +1,9 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+<video autoplay muted loop id="myVideo">
+  <source src="{% static "videos/video.mp4" %}" type="video/mp4">
+</video>
+
+{% endblock %}

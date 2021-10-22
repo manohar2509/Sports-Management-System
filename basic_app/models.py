@@ -9,32 +9,142 @@ class UserProfileInfo(models.Model):
     FOOTBALL = 'Football'
     HOCKEY = 'Hockey'
     BADMINTON = 'Badminton'
+    BASKETBALL = 'Basketball'
+    BOXING = 'Boxing'
+    DIVING = 'Diving'
+    HANDBALL = 'Handball'
+    SWIMMING = 'Swimming'
+    SHOOTING = 'Shooting'
+    TENNIS = 'Tennis'
     VOLLEYBALL = 'Volleyball'
+    WEIGHT_LIFTING = 'Weight Lifting'
+    ARCHERY = 'Archery'
+    JAVELIN = 'Javelin'
+    GOLF = 'Golf'
+    TABLE_TENNIS = 'Table Tennis'
+    FOOTBALL = 'Football'
+    WRESTLING = 'Wrestling'
+    BEACH_VOLLEYBALL = 'Beach Volleyball'
+    KARATE = 'Karate'
+    JUDO = 'Judo'
+    ATHLETICS = 'Athletics'
+    WATER_POLO = 'Water Polo'
+    TRACK_CYCLING = 'Track Cycling'
+    ROAD_CYCLING = 'Road Cycling'
+    ROWING = 'Rowing'
+    RUGBY = 'Rugby'
+    SAILING = 'Sailing'
+    SKATE_BOARDING = 'Skate Boarding'
+    SURFING = 'Surfing'
+
     SPORT_CHOICES = [
         (CRICKET, 'Cricket'),
         (FOOTBALL, 'Football'),
         (HOCKEY, 'Hockey'),
         (BADMINTON, 'Badminton'),
+        (BASKETBALL, 'Basketball'),
+        (BOXING, 'Boxing'),
+        (DIVING, 'Diving'),
+        (HANDBALL, 'Handball'),
+        (SWIMMING, 'Swimming'),
+        (SHOOTING, 'Shooting'),
+        (TENNIS, 'Tennis'),
         (VOLLEYBALL, 'Volleyball'),
+        (WEIGHT_LIFTING, 'Weight Lifting'),
+        (ARCHERY, 'Archery'),
+        (JAVELIN, 'Javelin'),
+        (GOLF, 'Golf'),
+        (TABLE_TENNIS, 'Table Tennis'),
+        (FOOTBALL, 'Football'),
+        (WRESTLING, 'Wrestling'),
+        (BEACH_VOLLEYBALL, 'Beach Volleyball'),
+        (KARATE, 'Karate'),
+        (JUDO, 'Judo'),
+        (ATHLETICS, 'Athletics'),
+        (WATER_POLO, 'Water Polo'),
+        (TRACK_CYCLING,'Track Cycling'),
+        (ROAD_CYCLING,'Road Cycling'),
+        (ROWING,'Rowing'),
+        (RUGBY,'Rugby'),
+        (SAILING,'Sailing'),
+        (SKATE_BOARDING,'Skate Boarding'),
+        (SURFING,'Surfing'),
+
     ]
     INDIA = 'India'
     JAPAN = 'Japan'
     CHINA = 'China'
     USA = 'Usa'
     RUSSIA = 'Russia'
+    GREAT_BRITAIN = "Great Britain"
+    AUSTRALIA = "Australia"
+    MALAYSIA = "Malaysia"
+    CANADA = "Canada"
+    EGYPT = "Egypt"
+    SCOTLAND = "Scotland"
+    BRAZIL = "Brazil"
+    FRANCE = "France"
+    ARGENTINA = "Argentina"
+    SWEDEN = "Sweden"
+    SOUTH_KOREA = "South korea"
+    ITALY = "Italy"
+    SPAIN = "Spain"
+    NEW_ZEALAND = "New Zealand"
+    GERMANY = "Germany"
+    PORTUGAL = "Portugal"
+    GREECE = "Greece"
+    CROATIA = "Croatia"
+    SWITZERLAND = "Switzerland"
+    MEXICO = "Mexico"
+    BELGIUM = "Belgium"
+    TURKEY = "Turkey"
+    QATAR = "Qatar"
+    SOUTH_AFRICA = "South Africa"
+    JAMAICA = "Jamaica"
+    COLOMBIA = "Colombia"
+    PERU = "Peru"
+    UKRAINE = "ukraine"
     COUNTRY_CHOICES = [
         (INDIA,"India"),
         (JAPAN,"Japan"),
         (CHINA,"China"),
         (USA,"Usa"),
-        (RUSSIA,"Russia")
+        (RUSSIA,"Russia"),
+        (GREAT_BRITAIN,"Great Britain"),
+        (AUSTRALIA,"Australia"),
+        (MALAYSIA,"Malaysia"),
+        (CANADA,"Canada"),
+        (EGYPT,"Egypt"),
+        (SCOTLAND,"Scotland"),
+        (BRAZIL,"Brazil"),
+        (FRANCE,"France"),
+        (ARGENTINA,"Argentina"),
+        (SWEDEN,"Sweden"),
+        (SOUTH_KOREA,"South korea"),
+        (ITALY,"Italy"),
+        (SPAIN,"Spain"),
+        (NEW_ZEALAND,"New Zealand"),
+        (GERMANY,"Germany"),
+        (PORTUGAL,"Portugal"),
+        (GREECE,"Greece"),
+        (CROATIA,"Croatia"),
+        (SWITZERLAND,"Switzerland"),
+        (MEXICO,"Mexico"),
+        (BELGIUM,"Belgium"),
+        (TURKEY,"Turkey"),
+        (QATAR,"Qatar"),
+        (SOUTH_AFRICA,"South Africa"),
+        (JAMAICA,"Jamaica"),
+        (COLOMBIA,"Colombia"),
+        (PERU,"Peru"),
+        (UKRAINE,"ukraine"),
     ]
     user = models.OneToOneField(User,on_delete = models.CASCADE)
     portofolio_site = models.URLField(blank='False')
     country = models.CharField(max_length = 32,choices = COUNTRY_CHOICES,)
     sport = models.CharField(max_length = 32,choices = SPORT_CHOICES,)
     profile_pic = models.ImageField(blank='False',upload_to = 'profile_pics')
-    def __str__(self):
+    def _str_(self):
         return self.user.username
 class Result_Men(models.Model):
     CRICKET = 'Cricket'
@@ -53,7 +163,7 @@ class Result_Men(models.Model):
     gold_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="gold_men",null=True,blank=True,default = 'gold')
     silver_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="silver_men",null=True,blank=True)
     bronze_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="bronze_men",null=True,blank=True)
-    def __str__(self):
+    def _str_(self):
         return self.sport
     class Meta:
         unique_together = ('gold_medal','silver_medal','bronze_medal',)
@@ -74,7 +184,7 @@ class Result_Women(models.Model):
     gold_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="gold_women",null=True,blank=True)
     silver_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="silver_women",null=True,blank=True)
     bronze_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="bronze_women",null=True,blank=True)
-    def __str__(self):
+    def _str_(self):
         return self.sport
     class Meta:
         unique_together = ('gold_medal','silver_medal','bronze_medal',)
@@ -106,7 +216,7 @@ class Medals(models.Model):
         return super(Medals, self).save()
     class Meta:
         ordering = ['gold_medal','silver_medal','bronze_medal','total_medals']
-    def __str__(self):
+    def _str_(self):
         return self.country
 class Room(models.Model):
     Categories = [
@@ -117,12 +227,12 @@ class Room(models.Model):
     Category = models.CharField(max_length = 10,choices = Categories,null=False, blank=False)
     Capacity = models.IntegerField()
     Beds = models.IntegerField()
-    def __str__(self):
+    def _str_(self):
         return f'{self.Room_number} with {self.Capacity} have {self.Beds}'
 class Booking(models.Model):
     Athlete = models.ForeignKey(User,on_delete = models.CASCADE)
     Room = models.ForeignKey(Room,on_delete = models.CASCADE)
     check_in = models.DateTimeField()
     check_out = models.DateTimeField()
-    def __str__(self):
+    def _str_(self):
         return f'{self.Athlete} has booked {self.Room} from {self.check_in} to {self.check_out}'

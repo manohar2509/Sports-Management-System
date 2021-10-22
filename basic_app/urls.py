@@ -21,4 +21,5 @@ urlpatterns = [
  path('result_women/<int:pk>/',views.ResultWomenDetailView.as_view(),name = "result_women_detail"),
  path('medals/',views.MedalsListView.as_view(),name = "medals"),
  path('medals/<int:pk>/',views.MedalsDetailView.as_view(),name = "medals_detail"),
+ 
 ]
