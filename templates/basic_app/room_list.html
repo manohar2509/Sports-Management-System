@@ -2,12 +2,15 @@
 {% load static %}
 
 {% block body_block %}
-  <div id="section" class="container">
+  <div class="container centering spread">
+    
     <div class="jumbotron">
  {% for room_category , room_url in room_list %}
-      <p><li class="list-element"><a href="{{room_url}}">{{room_category}}</a></li><p>
+      <p><li class="list-element"><span class="athlete-image"><img src="{% static "icons/fan.png" %}"><i style="border: 2px solid white; transform: rotate(90deg); margin-right: 20px;"></i><a href="{{room_url}}">{{room_category}}</a></li><p>
+        <img class="images-hotels" src="{% static "icons/hotel1.jpg" %}">
 {% endfor %}
     </div>
+  
 
   </div>
 {% endblock %}

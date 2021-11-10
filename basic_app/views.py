@@ -160,6 +160,26 @@ def search(request):
         return render(request,"basic_app/search.html",{'searched':searched,'athlete':athlete})
     else:
         return render(request,"basic_app/search.html",{})
+def country(request):
+    if request.method == 'POST':
+        s = request.POST['country']
+        #s = request.POST['country']
+        #print(s)
+        athlete = models.UserProfileInfo.objects.filter(country__icontains = s)
+        return render(request,"basic_app/country.html",{'s':s,'athlete':athlete})
+    else:
+        return render(request,"basic_app/country.html",{})
+def sport(request):
+    if request.method == 'POST':
+        s = request.POST['sport']
+        print("Hi")
+        #s = request.POST['country']
+        #print(s)
+        athlete = models.UserProfileInfo.objects.filter(sport__icontains = s)
+        return render(request,"basic_app/sport.html",{'s':s,'athlete':athlete})
+    else:
+        return render(request,"basic_app/sport.html",{})
+        
 def register(request):
 
     registered = False

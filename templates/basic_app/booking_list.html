@@ -2,10 +2,14 @@
 {% load static %}
 
 {% block body_block %}
-  <div id="section" class="container">
+  <div class="container centering">
     <div class="jumbotron">
 {% for i in booking_list %}
-  <h2><li class="list-element"><a href = "{% url 'basic_app:book_detail' pk=i.pk %}">{{i.Athlete}}</a></li></h2>
+{% if user.is_authenticated and user == i.Athlete %}
+<h2><li class="list-element"><a href = "{% url 'basic_app:book_detail' pk=i.pk %}">{{i.Room.Room_number}} booked by you</a></li></h2>
+{% else %}
+  <h2><li class="list-element">{{i.Room.Room_number}} booked by {{i.Athlete}}</li></h2>
+{% endif %}
 {% endfor %}
 
     </div>

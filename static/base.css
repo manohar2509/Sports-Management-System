@@ -140,10 +140,11 @@ body {
 
 /*CONTAINER*/
 #section {
-  margin: 0rem 2rem;
+  /* margin: 0rem 2rem; */
   padding: 2rem 2rem;
   border-bottom: 2px solid gray;
 }
+
 .jumbotron-main {
   height: 100vh;
   display: flex;
@@ -219,7 +220,7 @@ body {
   background: rgb(105, 5, 255);
 }
 
-. .jumbotron {
+.jumbotron {
   /* display: flex;
   justify-content: center;
   align-items: center;
@@ -530,4 +531,38 @@ body {
 
 .pagination {
   text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+}
+
+.centering {
+  width: 60%;
+  padding: 2rem 2rem;
+  margin: auto;
+}
+
+.images-hotels {
+  width: 300px;
+}
+
+.spread {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-image {
+  height: 200px;
+}
+
+.mainstreammedia {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container {
+  margin-bottom: 2rem;
 }

@@ -5,13 +5,23 @@
 <video autoplay muted loop id="myVideo">
   <source src="{% static "videos/video1.mp4" %}" type="video/mp4">
 </video>
-  <div id="section" class="container">
+  <div class="container centering">
     <div class="jumbotron">
 
       <h1 class="heading">Athlete Details</h1>
       <p><b>Name : </b>{{ athlete_detail.user.username}}</p>
-      <p><b>Country : </b>{{ athlete_detail.country}}</p>
-      <p><b>Sport : </b>{{ athlete_detail.sport}}</p>
+      <form method="post"action="{% url 'basic_app:country' %}">
+        {% csrf_token %}
+        country:-
+      <input type="hidden" value = "{{ athlete_detail.country}}" name="country">
+      <input type="submit" value="{{ athlete_detail.country}}">
+      </form>
+      <form method="post"action="{% url 'basic_app:sport' %}">
+        {% csrf_token %}
+        sport:-
+      <input type="hidden" value = "{{ athlete_detail.sport}}" name="sport">
+      <input type="submit" value="{{ athlete_detail.sport}}">
+      </form>
       {% if athlete_detail.profile_pic %}
         <p><b>Profile_pic : </b><img src="{{ athlete_detail.profile_pic.url}}"  alt="No profile_pic"> </p>
       {% endif %}

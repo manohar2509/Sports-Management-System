@@ -19,6 +19,7 @@
             <input type="submit" name="" value="Login">
             <a class="google-button" href="{% provider_login_url "google" %}"><img class="google-icon" src="{% static "icons/google.png" %}"><span class="google-text">Sign in with Google</span></a>
           </div>
+          <a href="{% url 'password_reset' %}">reset password</a>
           
       </form>
     </div>

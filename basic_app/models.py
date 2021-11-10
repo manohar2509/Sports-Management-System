@@ -144,7 +144,7 @@ class UserProfileInfo(models.Model):
     country = models.CharField(max_length = 32,choices = COUNTRY_CHOICES,)
     sport = models.CharField(max_length = 32,choices = SPORT_CHOICES,)
     profile_pic = models.ImageField(blank='False',upload_to = 'profile_pics')
-    def _str_(self):
+    def __str__(self):
         return self.user.username
 class Result_Men(models.Model):
     CRICKET = 'Cricket'
@@ -163,7 +163,7 @@ class Result_Men(models.Model):
     gold_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="gold_men",null=True,blank=True,default = 'gold')
     silver_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="silver_men",null=True,blank=True)
     bronze_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="bronze_men",null=True,blank=True)
-    def _str_(self):
+    def __str__(self):
         return self.sport
     class Meta:
         unique_together = ('gold_medal','silver_medal','bronze_medal',)
@@ -184,7 +184,7 @@ class Result_Women(models.Model):
     gold_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="gold_women",null=True,blank=True)
     silver_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="silver_women",null=True,blank=True)
     bronze_medal = models.ForeignKey(User,on_delete = models.CASCADE,related_name="bronze_women",null=True,blank=True)
-    def _str_(self):
+    def __str__(self):
         return self.sport
     class Meta:
         unique_together = ('gold_medal','silver_medal','bronze_medal',)
@@ -227,12 +227,12 @@ class Room(models.Model):
     Category = models.CharField(max_length = 10,choices = Categories,null=False, blank=False)
     Capacity = models.IntegerField()
     Beds = models.IntegerField()
-    def _str_(self):
-        return f'{self.Room_number} with {self.Capacity} have {self.Beds}'
+    def __str__(self):
+        return f'{self.Room_number} with capacity {self.Capacity} have {self.Beds} beds'
 class Booking(models.Model):
     Athlete = models.ForeignKey(User,on_delete = models.CASCADE)
     Room = models.ForeignKey(Room,on_delete = models.CASCADE)
     check_in = models.DateTimeField()
     check_out = models.DateTimeField()
-    def _str_(self):
+    def __str__(self):
         return f'{self.Athlete} has booked {self.Room} from {self.check_in} to {self.check_out}'

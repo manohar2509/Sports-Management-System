@@ -1,0 +1,52 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+{% if s %}
+<table style="border: 2px solid gray; margin-top: 2rem; margin-bottom: 2rem; width: 40%; margin: auto">
+    <tr style="border: 1px solid gray;">
+        <th style="border: 1px solid gray; background-color: gray"><b>Name</b></th>
+        <th style="border: 1px solid gray; background-color: gray"><b>Country</b></th>
+        <th style="border: 1px solid gray; background-color: gray"><b>Sport</b></th>
+      </tr>
+{% for i  in athlete %}
+<tr>
+
+    <td><p>  <a href="{% url 'basic_app:detail' i.id %}">{{i}}</a></p></td>
+
+    <form method="post"action="{% url 'basic_app:country' %}">
+    
+    {% csrf_token %}
+  <td>
+<input style="background-color: none; text-decoration: none; " type="hidden" value = "{{ i.country}}" name="country">
+<input style="background-color: none; text-decoration: none; padding: none; border: none; " type="submit" value="{{ i.country}}"> </td>
+</form>
+
+
+<td><p>  {{i.sport}}</p></td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+
+<p>please enter something valid to search</p>
+{% endif %}
+{% endblock %}
+
+
+<!-- {% for i  in athlete %}
+<tr>
+<td style="border: 1px solid gray;"><p>  <a href="{% url 'basic_app:detail' i.id %}">{{i}}</a></p></td>
+<td style="border: 1px solid gray;"><p>  {{i.country}}</p></td>
+<!-- <p>  <a href="{% url 'basic_app:detail' i.id %}">{{i.sport}}</a></p> -->
+<td style="border: 1px solid gray;"><form method="post"action="{% url 'basic_app:sport' %}">
+  {% csrf_token %}
+  
+<input class="op" style="background: none; color: white;" type="hidden" value = "{{ i.sport}}" name="sport">
+
+<input style="background: none; color: white;" type="submit" value="{{ i.sport}}">
+
+
+</form>
+</td>
+</tr>
+{% endfor %}
+</table> -->
