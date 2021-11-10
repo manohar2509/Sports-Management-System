@@ -1,0 +1,26 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+  <div style='background-image: url("{% static "icons/register.jpg" %}"); background-size: 100% 100%;' id="section" class="container mainstream">
+    <div class="jumbotron">
+      {% if registered %}
+        <h1>Thank you for registering!</h1>
+      {% else %}
+        <h1 class="main-heading">Register Here</h1>
+        <h3 class="main-subheading">Just fill out the form.</h3>
+
+        <form class="register-form form-container2" enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <input type="submit" name="" value="Register">
+        </form>
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+{% endblock %}

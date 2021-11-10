@@ -1,0 +1,11 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+<h1>Delete {{ bookings }}?</h1>
+<div class="form-container">
+  <form class="form-form" method="post">
+    {% csrf_token %}
+    <input type="submit" name="" value="Delete">
+    <a href="{% url 'basic_app:book_detail' pk=bookings.pk %}"> cancel </a>
+  </form>
+</div>
+{% endblock %}

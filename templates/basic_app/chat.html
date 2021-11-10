@@ -1,0 +1,15 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+<h1> ChatBox </h1>
+{% if user.is_authenticated %}
+  {{user.username}}
+{% endif %}
+<form class="register-form form-container2" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+  <div class="input-div">
+    <label for = "id_message"> Message:</label>
+    <input type = "text" id = "id_message" name="message">
+  </div>
+  <input type="submit" name="" value="send">
+</form>
+{% endblock %}

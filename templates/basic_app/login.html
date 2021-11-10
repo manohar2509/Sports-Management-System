@@ -1,0 +1,27 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% block body_block %}
+{% load socialaccount %}
+{% providers_media_js %}
+  <div class="jumbotron">
+    <div class="form-container">
+      <form class="form-form" action="{% url 'basic_app:user_login' %}" method="post">
+          {% csrf_token %}
+          <div class="username-container">
+            <label for="username">Username:</label>
+            <input type = 'text' placeholder="username" name = 'username'>
+          </div>
+          <div class="password-container">
+            <label for="password">Password:</label>
+            <input type="password" name="password" >
+          </div>
+          <div class="submit-container">
+            <input type="submit" name="" value="Login">
+            <a class="google-button" href="{% provider_login_url "google" %}"><img class="google-icon" src="{% static "icons/google.png" %}"><span class="google-text">Sign in with Google</span></a>
+          </div>
+          <a href="{% url 'password_reset' %}">reset password</a>
+          
+      </form>
+    </div>
+  </div>
+{% endblock %}

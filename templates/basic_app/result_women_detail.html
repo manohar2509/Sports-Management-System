@@ -1,0 +1,20 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+<video autoplay muted loop id="myVideo">
+  <source src="{% static "videos/video.mp4" %}" type="video/mp4">
+</video>
+  <div class="container centering">
+    <div class="jumbotron">
+
+      <ol class="list-or">
+        <h2><li class="list-element"><span class="medals gold-medal"><img src="{% static "icons/gold-medal.png" %}"></span>Gold :- {{result_women_detail.gold_medal}}</li></h2>
+        <h2><li class="list-element"><span class="medals silver-medal"><img src="{% static "icons/silver-medal.png" %}"></span>Silver :- {{result_women_detail.silver_medal}}</li></h2>
+        <h2><li class="list-element"><span class="medals bronze-medal"><img src="{% static "icons/bronze-medal.png" %}"></span>Bronze :- {{result_women_detail.bronze_medal}}</li></h2>
+      </ol>
+
+  </div>
+</div>
+
+{% endblock %}

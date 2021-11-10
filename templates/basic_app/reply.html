@@ -1,0 +1,10 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+<h1> ChatBox </h1>
+{% if user.is_authenticated %}
+  <p> Hi</p>
+  Message:- {{b.Message}}
+  Reply :- {{b.Reply}}
+{% endif %}
+<p><a  href="{% url 'basic_app:chat' %}">Chat</a></p>
+{% endblock %}

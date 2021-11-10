@@ -1,0 +1,171 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+{% load static %}
+<video autoplay muted loop id="myVideo">
+  <source src="{% static "videos/video.mp4" %}" type="video/mp4">
+</video>
+<div id="section" class="containerval">
+  <div class="jumbotron-main">
+    <div class="intro-left">
+      <h1 class="intro-main-heading">Sangarsh 2021</h1>
+      <h2 class="intro-main-subheading">We welcome you to the first edition of Sangarsh.</h2>
+      <h2 class="intro-main-subheading">Sangarsh is an annual sports event conducted across various cities around the World, The best talent come here to grab their dream</h2>
+    </div>
+    <div class="intro-right">
+      <div class="intro-heading">
+        Sangarsh 2021
+      </div>
+      <div class="intro-section">
+        <div class="intro-sections">
+          <div class="intro-sections-left">Date</div>
+          <div class="intro-sections-right">abcd</div>
+        </div>
+        <div class="intro-sections">
+          <div class="intro-sections-left">Country</div>
+          <div class="intro-sections-right">abcd</div>
+        </div>
+        <div class="intro-sections">
+          <div class="intro-sections-left">Athletes</div>
+          <div class="intro-sections-right">abcd</div>
+        </div>
+        <div class="intro-sections">
+          <div class="intro-sections-left">Teams</div>
+          <div class="intro-sections-right">abcd</div>
+        </div>
+        <div class="intro-sections">
+          <div class="intro-sections-left">Events</div>
+          <div class="intro-sections-right">abcd</div>
+        </div>
+      </div>
+      <div class="intro-buttons">
+        <a href="{% url 'index' %}" class="intro-btn intro-btn-left">Home<i class="arrow right"></i></a>
+        <a href="{% url 'basic_app:result_men' %}" class="intro-btn intro-btn-right">Results <i class="arrow right"></i></a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div id="section" class="photos">
+  <h1 class="photos-heading">Photos from the Event</h1>
+  <div class="photos-list">
+    <div class="photo-container"><img src="{% static "event-photos/photos2.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos3.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Long Jump Women SemiFinal</div>
+        <p class="description-subheading">Held on Oct 18 2021, The gold medalist were USA</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos4.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Relay Women Final</div>
+        <p class="description-subheading">Held on Oct 10 2021, Silver and Gold Medals were won by Jamaica the 2nd runner up was USA</p>
+      </div>
+    </div>
+  </div>
+  <div class="photos-list">
+    <div class="photo-container"><img src="{% static "event-photos/image1.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">USA Swimming Final</div>
+        <p class="description-subheading">USA Team celebrates after winning gold</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/image4.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Fencing match between India and Russia</div>
+        <p class="description-subheading">India gave a tough fight to russia in fencing game held on October 24th 2020</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/swimmingimage.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Opening Ceremony Performancce</div>
+        <p class="description-subheading">Swimming show performed by athletes of various countries in the Opening Ceremony</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Top Performer -->
+
+
+  <!-- <div class="photos-list">
+    <div class="photo-container"><img src="{% static "event-photos/photos2.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos3.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+    <div class="photo-container"><img src="{% static "event-photos/photos4.jpg" %}" alt="">
+      <div class="photo-description">
+        <div class="description-heading">Gymnastics Women Final</div>
+        <p class="description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+      </div>
+    </div>
+  </div> -->
+<!-- </div> -->
+<div id="section" class="top-performers">
+  <h1 class="top-heading">Top Performers</h1>
+  <div class="top-list">
+    <div class="top-container"><img src="{% static "top-performerss/top-performer1.jpg" %}" alt="">
+      <div class="top-description">
+        <div class="top-description-heading">Michael Phelps</div>
+        <p class="top-description-subheading">Gold medalist in Butterfly, Free dive, seal dive (Swimming)</p>
+      </div>
+    </div>
+    <div class="top-container"><img src="{% static "top-performerss/top-performer2.jpg" %}" alt="">
+      <div class="top-description">
+        <div class="top-description-heading">Saina Nehwal</div>
+        <p class="top-description-subheading">The three time Asian Commonwealth Champion, went on to secure 1 Gold and 1 Silver in Sangarsh</p>
+      </div>
+    </div>
+    <div class="top-container"><img src="{% static "top-performerss/top-performer3.jpg" %}" alt="">
+      <div class="top-description">
+        <div class="top-description-heading">Sania Mirza</div>
+        <p class="top-description-subheading">The 2 time World Champion secured 1 Gold medal in doubles for India</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="section" class="top-performers">
+    <h1 class="top-heading">Videos</h1>
+    <div class="top-list">
+      <div class="top-container">
+        <iframe class="top-video" width="420" height="315"
+src="https://www.youtube.com/embed/GYnZkFVXvts">
+</iframe>
+        <!-- <div class="top-description">
+          <div class="top-description-heading">Michael Phelps</div>
+          <p class="top-description-subheading">Gold medalist in Butterfly, Free dive, seal dive (Swimming)</p>
+        </div> -->
+      </div>
+      <div class="top-container">
+        <iframe class="top-video" width="420" height="315"
+src="https://www.youtube.com/embed/T1T0CEMK_fQ">
+</iframe>
+        <!-- <div class="top-description">
+          <div class="top-description-heading">Gymnastics Women Final</div>
+          <p class="top-description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+        </div> -->
+      </div>
+      <div class="top-container">
+        <iframe class="top-video" width="420" height="315"
+src="https://www.youtube.com/embed/pBsjtSjQEjM">
+</iframe>
+        <!-- <div class="top-description">
+          <div class="top-description-heading">Gymnastics Women Final</div>
+          <p class="top-description-subheading">Held on Oct 12 2021, This was a nail biting event where the finalists were from countries USA, Jamaica and Czech Republic</p>
+        </div> -->
+      </div>
+    </div>
+    </div>
+{% endblock %}
