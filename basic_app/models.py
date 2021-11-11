@@ -242,3 +242,17 @@ class Chat(models.Model):
     Reply = models.CharField(max_length=300,blank=True)
     def _str_(self):
         return f'{self.Athlete}'
+
+class Essentials(models.Model):
+    Athlete = models.ForeignKey(User,on_delete = models.CASCADE)
+    Categories = [
+                ('No','No'),
+                ('Yes','Yes'),
+                (None, 'No allocated')
+        ]
+    Shoes = models.CharField(max_length = 10,choices = Categories,null=False, blank=False)
+    Bag = models.CharField(max_length = 10,choices = Categories,null=False, blank=False)
+    Jersy = models.CharField(max_length = 10,choices = Categories,null=False, blank=False)
+    Accomodation = models.CharField(max_length = 10,choices = Categories,null=False, blank=False)
+    def _str_(self):
+        return f'{self.Athlete}'

@@ -12,6 +12,7 @@ urlpatterns = [
    path('chat/',views.chat,name='chat'),
    path('reply/',views.reply,name='reply'),
    path('news/',views.news,name='news'),
+      path('essentials/',views.essentials,name='essentials'),
  #path('book/',views.BookingView,name = 'avail'),
  path('schedule',views.schedule,name = 'schedule'),
  path('booking_list/<int:pk>/',views.BookingDetailView.as_view(),name = "book_detail"),

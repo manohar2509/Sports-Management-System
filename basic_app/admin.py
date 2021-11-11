@@ -1,6 +1,7 @@
 from django.contrib import admin
-from basic_app.models import UserProfileInfo,Result_Men,Result_Women,Medals,Room,Booking, Chat
+from basic_app.models import UserProfileInfo,Result_Men,Essentials,Result_Women,Medals,Room,Booking, Chat
 from django.contrib.auth.models import User
+
 # Register your models here.
 
 class mymodel(admin.ModelAdmin):
@@ -27,5 +28,6 @@ admin.site.register(Result_Men,mymodel1)
 admin.site.register(Result_Women,mymodel1)
 admin.site.register(Medals,mymodel2)
 admin.site.register(Room)
+admin.site.register(Essentials)
 admin.site.register(Booking)
 admin.site.register(Chat,mymodel3)

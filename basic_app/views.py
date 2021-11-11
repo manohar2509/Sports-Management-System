@@ -9,6 +9,7 @@ from basic_app import models
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from basic_app.booking_fnc import avail
+from datetime import date
 class AthleteListView(ListView):
     context_object_name = 'athletes'
     model = models.UserProfileInfo
@@ -76,7 +77,11 @@ class BookingDeleteView(DeleteView):
     template_name = 'basic_app/booking_delete.html'
     success_url = reverse_lazy('index')
 def index(request):
-    return render(request,'basic_app/index.html')
+    today = date.today()
+    c = "India"
+    E = 5
+    a = 100
+    return render(request,'basic_app/index.html',{'t':today,'c':c,'E':E,'a':a})
 def news(request):
     return render(request,'basic_app/news.html')
 @login_required
@@ -303,3 +308,11 @@ def reply(request):
     except:
         b = "No message"
     return render(request, 'basic_app/reply.html', {'b':b})
+@login_required
+def essentials(request):
+    try:
+        b = models.Essentials.objects.get(Athlete= request.user)
+        print(b)
+    except:
+        b = ""
+    return render(request, 'basic_app/essentials.html', {'b':b})

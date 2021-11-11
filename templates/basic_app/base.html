@@ -26,7 +26,7 @@
 
         <div class="navbar-routes">
           <a class="navbar-brand" href="{% url 'index' %}"><img class="navbar-icon" src="{% static "icons/home.png" %}">HOME</a>
-          <a class="navbar-brand" href="{% url 'basic_app:news' %}"><img class="navbar-icon" src="{% static "icons/home.png" %}">News</a>
+          <a class="navbar-brand" href="{% url 'basic_app:news' %}"><img class="navbar-icon" src="{% static "icons/calendar.png" %}">News</a>
           <a class="navbar-brand" href="{% url 'basic_app:list' %}"><img class="navbar-icon" src="{% static "icons/list.png" %}">Athletes</a>
           <a class="navbar-brand" href="{% url 'basic_app:schedule' %}"><img class="navbar-icon" src="{% static "icons/calendar.png" %}">Schedule</a>
           {% if user.is_authenticated %}
@@ -37,6 +37,21 @@
           <a class="navbar-brand" href="{% url 'basic_app:result_men' %}"><img class="navbar-icon" src="{% static "icons/user.png" %}">Result_Men</a>
           <a class="navbar-brand" href="{% url 'basic_app:result_women' %}"><img class="navbar-icon" src="{% static "icons/woman.png" %}">Result_Women</a>
           <a class="navbar-brand" href="{% url 'basic_app:medals' %}"><img class="navbar-icon" src="{% static "icons/medal.png" %}">Medals</a>
+          <a class="navbar-brand" href="{% url 'basic_app:essentials' %}"><img class="navbar-icon" src="{% static "icons/essentials.png" %}">Essentials</a>
+          {% if not user.is_authenticated %}
+          <a class="navbar-link" href="{% url 'admin:index' %}">Admin</a>
+          {% endif %}
+          {% if not user.is_authenticated %}
+          <a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <a class="navbar-brand" href="{% url 'basic_app:reply' %}"><img class="navbar-icon" src="{% static "icons/comment.png" %}">Message</a>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <a class="navbar-link" href="{% url 'logout' %}">Logout</a>
+          {% else %}
+          <a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a>
+          {% endif %}
           <form style="margin-left: .5rem" class="search-form" method="POST"action="{% url 'basic_app:search' %}">
             {% csrf_token %}
             <input style="outline: none; border: none; border-radius: 3px" class="search-input" type = "search" palceholder = "search"arial-label="search" name="search">
@@ -45,20 +60,7 @@
         </div>
 
         <div class="navbar-links">
-          {% if not user.is_authenticated %}
-          <a class="navbar-link" href="{% url 'admin:index' %}">Admin</a>
-          {% endif %}
-          {% if not user.is_authenticated %}
-          <a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a>
-          {% endif %}
-          {% if user.is_authenticated %}
-          <a class="navbar-link" href="{% url 'basic_app:reply' %}">Message</a>
-          {% endif %}
-          {% if user.is_authenticated %}
-          <a class="navbar-link" href="{% url 'logout' %}">Logout</a>
-          {% else %}
-          <a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a>
-          {% endif %}
+      
         </div>
         </div>
 
