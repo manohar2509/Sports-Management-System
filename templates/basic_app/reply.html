@@ -1,0 +1,20 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% block body_block %}
+<div class="container centering">
+<h1 class="main-heading"> ChatBox </h1>
+<div class="chat_container">
+{% if user.is_authenticated %}
+  
+<div class="chat_msg_container">
+    <p>{{b.Message}}</p>
+</div>
+
+<div class="chat_msg_container darker">
+    <p>{{b.Reply}}</p>
+</div>
+{% endif %}
+<p><a  href="{% url 'basic_app:chat' %}">Chat</a></p>
+</div>
+</div>
+{% endblock %}

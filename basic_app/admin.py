@@ -1,5 +1,5 @@
 from django.contrib import admin
-from basic_app.models import UserProfileInfo,Result_Men,Result_Women,Medals,Room,Booking
+from basic_app.models import UserProfileInfo,Result_Men,Result_Women,Medals,Room,Booking, Chat
 from django.contrib.auth.models import User
 # Register your models here.
 
@@ -18,9 +18,14 @@ class mymodel2(admin.ModelAdmin):
     list_display = ['country','gold_medal','silver_medal','bronze_medal','total_medals']
     list_editable = ['gold_medal','silver_medal','bronze_medal','total_medals']
     #prepopulated_fields = {'total_medals':sum(['gold_medal','silver_medal','bronze_medal'])}
+class mymodel3(admin.ModelAdmin):
+    model = Chat
+    list_display = ['Athlete','Message','Reply']
+    list_editable = ['Reply']
 admin.site.register(UserProfileInfo,mymodel)
 admin.site.register(Result_Men,mymodel1)
 admin.site.register(Result_Women,mymodel1)
 admin.site.register(Medals,mymodel2)
 admin.site.register(Room)
 admin.site.register(Booking)
+admin.site.register(Chat,mymodel3)

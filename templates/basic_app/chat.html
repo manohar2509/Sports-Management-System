@@ -1,0 +1,18 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+<div class="container centering">
+<h1 class="main-heading"> ChatBox </h1>
+{% if user.is_authenticated %}
+  <h2 class="main-subheading">User:  {{user.username}}</h2>
+{% endif %}
+<form class="register-form form-container2" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+  <div class="input-div">
+    <label for = "id_message"> Message:</label>
+    <input type = "text" id = "id_message" name="message">
+  </div>
+  <input style="text-align: center; display: inline; "class="google-button" type="submit" name="" value="send">
+</form>
+</div>
+
+{% endblock %}

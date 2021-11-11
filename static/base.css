@@ -26,11 +26,8 @@ body {
 
 /* NAVBAR */
 .navbar {
-  width: 100vw;
+  width: 100%;
   border-bottom: 1px solid black;
-  /* background: rgba(228, 228, 228, 0.674); */
-
-  /* box-shadow: 0 1px 7px rgba(68, 44, 0, 0.796); */
 }
 
 .navbar-nav {
@@ -565,4 +562,47 @@ td {
 }
 .container {
   margin-bottom: 2rem;
+}
+
+.chat_container {
+  /* display: inline-block; */
+  width: 50%;
+  margin: auto;
+  border: 2px solid white;
+  padding: 1rem;
+  border-radius: 12px;
+  /* margin: auto; */
+}
+
+.chat_msg_container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  color: black;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: rgb(177, 177, 177);
+  color: black;
+}
+
+.chat_msg_container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* NEWS SECTION  */
+.news_container {
+  padding: 0 2rem;
+  margin-top: 2rem;
+}
+
+.india_images {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

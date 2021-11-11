@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import UserForm,UserProfileInfoForm,availform
+from .forms import UserForm,UserProfileInfoForm,availform,ChatForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse,reverse_lazy
@@ -77,6 +77,8 @@ class BookingDeleteView(DeleteView):
     success_url = reverse_lazy('index')
 def index(request):
     return render(request,'basic_app/index.html')
+def news(request):
+    return render(request,'basic_app/news.html')
 @login_required
 def special(request):
     return HttpResponse("You are logged in. Nice!")
@@ -271,3 +273,33 @@ def user_login(request):
     else:
         #Nothing has been provided for username or password.
         return render(request, 'basic_app/login.html', {})
+@login_required
+def chat(request):
+    if request.method == 'POST':
+        chat_form = ChatForm(data=request.POST)
+        if chat_form.is_valid():
+            try:
+                b1 = models.Chat.objects.get(Athlete= request.user)
+                if b1.Reply == "":
+                    b1.Message += ' <---> '
+                    b1.Message += chat_form['message'].value()
+                else:
+                    b1.Message = chat_form['message'].value()
+                    b1.Reply = ""
+                b1.save()
+            except:
+                b = models.Chat.objects.create(Athlete = request.user,Message = chat_form['message'].value())
+                b.save()
+        else:
+            print(chat_form.errors)
+    else:
+        chat_form = ChatForm()
+    return render(request, 'basic_app/chat.html', {'chat_form':chat_form})
+@login_required
+def reply(request):
+    try:
+        b = models.Chat.objects.get(Athlete= request.user)
+        print(b)
+    except:
+        b = "No message"
+    return render(request, 'basic_app/reply.html', {'b':b})

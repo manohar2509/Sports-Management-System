@@ -236,3 +236,9 @@ class Booking(models.Model):
     check_out = models.DateTimeField()
     def __str__(self):
         return f'{self.Athlete} has booked {self.Room} from {self.check_in} to {self.check_out}'
+class Chat(models.Model):
+    Athlete = models.ForeignKey(User,on_delete = models.CASCADE)
+    Message = models.CharField(max_length=300 , blank = False)
+    Reply = models.CharField(max_length=300,blank=True)
+    def _str_(self):
+        return f'{self.Athlete}'

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from basic_app.models import UserProfileInfo
+from basic_app.models import UserProfileInfo, Chat
 from datetimepicker.widgets import DateTimePicker
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget = forms.PasswordInput())
@@ -14,3 +14,5 @@ class UserProfileInfoForm(forms.ModelForm):
 class availform(forms.Form):
     check_in = forms.DateTimeField(required=True,input_formats=['%Y-%m-%d %H:%M',])
     check_out = forms.DateTimeField(required=True,input_formats=['%Y-%m-%d %H:%M',])
+class ChatForm(forms.Form):
+    message=forms.CharField(max_length=300, required=True)

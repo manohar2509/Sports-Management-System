@@ -26,6 +26,7 @@
 
         <div class="navbar-routes">
           <a class="navbar-brand" href="{% url 'index' %}"><img class="navbar-icon" src="{% static "icons/home.png" %}">HOME</a>
+          <a class="navbar-brand" href="{% url 'basic_app:news' %}"><img class="navbar-icon" src="{% static "icons/home.png" %}">News</a>
           <a class="navbar-brand" href="{% url 'basic_app:list' %}"><img class="navbar-icon" src="{% static "icons/list.png" %}">Athletes</a>
           <a class="navbar-brand" href="{% url 'basic_app:schedule' %}"><img class="navbar-icon" src="{% static "icons/calendar.png" %}">Schedule</a>
           {% if user.is_authenticated %}
@@ -49,6 +50,9 @@
           {% endif %}
           {% if not user.is_authenticated %}
           <a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <a class="navbar-link" href="{% url 'basic_app:reply' %}">Message</a>
           {% endif %}
           {% if user.is_authenticated %}
           <a class="navbar-link" href="{% url 'logout' %}">Logout</a>
